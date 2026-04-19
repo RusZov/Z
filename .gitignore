@@ -1,0 +1,20 @@
+# OS/editor noise
+Thumbs.db
+Desktop.ini
+
+# Python / generic cache
+__pycache__/
+*.pyc
+
+# Ren'Py build artifacts and local runtime state
+prototype/gorny_prototype/game/cache/
+prototype/gorny_prototype/game/saves/
+prototype/gorny_prototype/game/*.rpyc
+prototype/gorny_prototype/log.txt
+prototype/gorny_prototype/traceback.txt
+prototype/gorny_prototype/errors.txt
+prototype/logs/
+
+# Local SDK/downloads
+setup/downloads/
+setup/renpy-8.5.2-sdk/
