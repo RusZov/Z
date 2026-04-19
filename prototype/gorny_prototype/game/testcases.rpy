@@ -1,6 +1,7 @@
 testsuite global:
     after testcase:
-        run MainMenu(confirm=False)
+        python:
+            reset_prototype_state()
 
     teardown:
         exit

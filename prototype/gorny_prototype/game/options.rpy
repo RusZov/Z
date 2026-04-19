@@ -15,6 +15,7 @@ define gui.about = _p("""
 
 define build.name = "gorny_lilac_lies"
 define config.save_directory = "gorny_lilac_lies_prototype"
+define config.window_icon = "gui/window_icon.png"
 
 define config.has_sound = True
 define config.has_music = True

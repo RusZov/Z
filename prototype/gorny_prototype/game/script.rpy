@@ -164,7 +164,6 @@ label start:
     $ reset_prototype_state()
     $ prototype_assert_assets_ready()
     $ play_prototype_bgm("school_day")
-    show screen prototype_hud
 
     scene expression prototype_scene("arrival_train")
     with fade
@@ -648,5 +647,4 @@ label final_summary:
 
     th "Конец первого акта прототипа."
 
-    hide screen prototype_hud
     return

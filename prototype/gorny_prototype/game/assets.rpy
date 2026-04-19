@@ -143,6 +143,11 @@ init -10 python:
         "vika": "маршрут Вики",
     }
 
+    def prototype_renpy_path(path):
+        absolute = os.path.abspath(path)
+        relative = os.path.relpath(absolute, config.gamedir)
+        return relative.replace("\\", "/")
+
     def prototype_design_root():
         return os.path.abspath(os.path.join(config.gamedir, "assets", "backgrounds"))
 
@@ -165,11 +170,11 @@ init -10 python:
             for extension in extensions:
                 direct = os.path.join(root, stem + extension)
                 if os.path.isfile(direct):
-                    return os.path.abspath(direct)
+                    return prototype_renpy_path(direct)
 
                 recursive = glob.glob(os.path.join(root, "**", stem + extension), recursive=True)
                 if recursive:
-                    return os.path.abspath(recursive[0])
+                    return prototype_renpy_path(recursive[0])
 
         return None
 
@@ -195,11 +200,11 @@ init -10 python:
             for extension in extensions:
                 direct = os.path.join(root, stem + extension)
                 if os.path.isfile(direct):
-                    return os.path.abspath(direct)
+                    return prototype_renpy_path(direct)
 
                 recursive = glob.glob(os.path.join(root, "**", stem + extension), recursive=True)
                 if recursive:
-                    return os.path.abspath(recursive[0])
+                    return prototype_renpy_path(recursive[0])
 
         return None
 
@@ -224,11 +229,11 @@ init -10 python:
             for extension in extensions:
                 direct = os.path.join(root, stem + extension)
                 if os.path.isfile(direct):
-                    return os.path.abspath(direct)
+                    return prototype_renpy_path(direct)
 
                 recursive = glob.glob(os.path.join(root, "**", stem + extension), recursive=True)
                 if recursive:
-                    return os.path.abspath(recursive[0])
+                    return prototype_renpy_path(recursive[0])
 
         return None
 
@@ -326,7 +331,11 @@ init -10 python:
 
         if (
             (stat("evidence_strength") <= 1 and stat("criminal_heat") >= 3)
-            or (values.get("mother_warned_full") and stat("trust_marina") <= 1)
+            or (
+                values.get("mother_warned_full")
+                and stat("criminal_heat") >= 2
+                and stat("evidence_strength") <= 2
+            )
         ):
             return "E"
 
@@ -355,6 +364,9 @@ init -10 python:
 
         if final_choice == "alone":
             return "B"
+
+        if final_choice == "mixed":
+            return "C" if stat("criminal_heat") >= 2 else "B"
 
         if stat("criminal_heat") >= 3:
             return "C"
