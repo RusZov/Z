@@ -1,0 +1,13 @@
+Verification date: 2026-04-19
+Project: C:\Users\Бабушка\Desktop\игры\prototype\gorny_prototype
+
+- lint: exit code 0
+- compile: exit code 0
+- test: exit code 0
+- runtime launch: success, main window opened
+- visual menu check: main menu background is visible in a local runtime screenshot
+
+Notes:
+- lint reports only the known unreachable-statements warning for DSL testcases.
+- main menu background is visible in the runtime screenshot.
+- act 2 continuation is connected from final_summary via an explicit menu choice.

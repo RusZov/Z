@@ -20,8 +20,16 @@ define gui.name_text_size = 46
 define gui.interface_text_size = 24
 define gui.label_text_size = 30
 
-define gui.main_menu_background = "assets/backgrounds/bg_02_gorny_panorama.png"
-define gui.game_menu_background = "assets/backgrounds/bg_07_classroom.png"
+define gui.main_menu_background = Transform(
+    "assets/backgrounds/menu_gorny_overlook.png",
+    xysize=(1280, 720),
+    fit="cover",
+)
+define gui.game_menu_background = Transform(
+    "assets/backgrounds/menu_gorny_overlook.png",
+    xysize=(1280, 720),
+    fit="cover",
+)
 
 define gui.textbox_height = 230
 define gui.dialogue_xpos = 72
