@@ -127,19 +127,25 @@ init python:
         return values
 
 transform sprite_left:
-    xalign 0.23
+    xalign 0.18
     yalign 1.0
-    zoom 0.74
+    yoffset -8
+    ysize 700
+    fit "contain"
 
 transform sprite_center:
     xalign 0.5
     yalign 1.0
-    zoom 0.78
+    yoffset -8
+    ysize 720
+    fit "contain"
 
 transform sprite_right:
-    xalign 0.77
+    xalign 0.82
     yalign 1.0
-    zoom 0.74
+    yoffset -8
+    ysize 700
+    fit "contain"
 
 screen prototype_hud():
     zorder 150

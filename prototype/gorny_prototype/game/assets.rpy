@@ -260,7 +260,11 @@ init -10 python:
         asset_path = prototype_find_background(scene_key)
 
         if asset_path:
-            return store.Image(asset_path)
+            return store.Transform(
+                store.Image(asset_path),
+                xysize=(config.screen_width, config.screen_height),
+                fit="cover",
+            )
 
         raise Exception("Missing required background for scene: " + scene_key)
 
